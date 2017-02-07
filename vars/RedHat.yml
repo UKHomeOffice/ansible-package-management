@@ -1,0 +1,29 @@
+---
+centos_base_repo: http://mirror.centos.org/centos/$releasever/os/$basearch/
+centos_base_repo_enabled: true
+centos_updates_repo: http://mirror.centos.org/centos/$releasever/updates/$basearch/
+centos_updates_repo_enabled: true
+centos_extras_repo: http://mirror.centos.org/centos/$releasever/extras/$basearch/
+centos_extras_repo_enabled: false
+centos_centosplus_repo: http://mirror.centos.org/centos/$releasever/centosplus/$basearch/
+centos_centosplus_repo_enabled: false
+centos_contrib_repo: http://mirror.centos.org/centos/$releasever/contrib/$basearch/
+centos_contrib_repo_enabled: false
+centos_fasttrack_repo: http://mirror.centos.org/centos/$releasever/fasttrack/$basearch/
+centos_fasttrack_repo_enabled: false
+centos_repo_ssl_verify: false
+centos_repo_gpgcheck: true
+centos_repo_gpgkey_url: http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-$releasever
+
+epel_repo: http://download.fedoraproject.org/pub/epel/$releasever/$basearch
+epel_repo_enabled: true
+epel_repo_ssl_verify: false
+epel_repo_gpgcheck: true
+epel_repo_gpgkey_url: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-$releasever
+
+remove_repos:
+  - CentOS-Base.repo
+  - CentOS-Debuginfo.repo
+  - CentOS-fasttrack.repo
+  - CentOS-Media.repo
+  - CentOS-Vault.repo 

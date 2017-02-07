@@ -1,0 +1,62 @@
+---
+- name: Remove Kickstart Repo Files if present
+  file:
+    path: "/etc/yum.repos.d/{{ item }}"
+    state: absent
+  with_items: "{{ remove_repos }}"
+- yum_repository:
+    name: base
+    description: "CentOS-$releaserver - Base"
+    baseurl: "{{ centos_base_repo }}"
+    enabled: "{{ centos_base_repo_enabled }}"
+    gpgkey: "{{ centos_repo_gpgkey_url }}"
+    gpgcheck: "{{ centos_repo_gpgcheck }}"
+    sslverify: "{{ centos_repo_ssl_verify }}"
+- yum_repository:
+    name: updates
+    description: "CentOS-$releaserver - Updates"
+    baseurl: "{{ centos_updates_repo }}"
+    enabled: "{{ centos_updates_repo_enabled }}"
+    gpgkey: "{{ centos_repo_gpgkey_url }}"
+    gpgcheck: "{{ centos_repo_gpgcheck }}"
+    sslverify: "{{ centos_repo_ssl_verify }}"
+- yum_repository:
+    name: extras
+    description: "CentOS-$releaserver - Extras"
+    baseurl: "{{ centos_extras_repo }}"
+    enabled: "{{ centos_extras_repo_enabled }}"
+    gpgkey: "{{ centos_repo_gpgkey_url }}"
+    gpgcheck: "{{ centos_repo_gpgcheck }}"
+    sslverify: "{{ centos_repo_ssl_verify }}"     
+- yum_repository:
+    name: centosplus
+    description: "CentOS-$releaserver - Plus"
+    baseurl: "{{ centos_centosplus_repo }}"
+    enabled: "{{ centos_centosplus_repo_enabled }}"
+    gpgkey: "{{ centos_repo_gpgkey_url }}"
+    gpgcheck: "{{ centos_repo_gpgcheck }}"
+    sslverify: "{{ centos_repo_ssl_verify }}"
+- yum_repository:
+    name: contrib
+    description: "CentOS-$releaserver - Contrib"
+    baseurl: "{{ centos_contrib_repo }}"
+    enabled: "{{ centos_contrib_repo_enabled }}"
+    gpgkey: "{{ centos_repo_gpgkey_url }}"
+    gpgcheck: "{{ centos_repo_gpgcheck }}"
+    sslverify: "{{ centos_repo_ssl_verify }}"
+- yum_repository:
+    name: fasttrack
+    description: "CentOS-$releaserver - fasttrack"
+    baseurl: "{{ centos_fasttrack_repo }}"
+    enabled: "{{ centos_fasttrack_repo_enabled }}"
+    gpgkey: "{{ centos_repo_gpgkey_url }}"
+    gpgcheck: "{{ centos_repo_gpgcheck }}"
+    sslverify: "{{ centos_repo_ssl_verify }}"
+- yum_repository:
+    name: epel
+    description: "Extra Packages for Enterprise Linux 6 - $basearch"
+    baseurl: "{{ epel_repo }}"
+    enabled: "{{ epel_repo_enabled }}"
+    gpgkey: "{{ epel_repo_gpgkey_url }}"
+    gpgcheck: "{{ epel_repo_gpgcheck }}"
+    sslverify: "{{ epel_repo_ssl_verify }}"
