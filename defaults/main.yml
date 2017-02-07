@@ -23,7 +23,10 @@ epel_repo_gpgkey_url: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-$re
 
 remove_repos:
   - CentOS-Base.repo
+  - CentOS-CR.repo
   - CentOS-Debuginfo.repo
   - CentOS-fasttrack.repo
   - CentOS-Media.repo
-  - CentOS-Vault.repo 
+  - CentOS-Sources.repo 
+  - CentOS-Vault.repo
+  - epel-testing.repo

@@ -12,6 +12,7 @@
     gpgkey: "{{ centos_repo_gpgkey_url }}"
     gpgcheck: "{{ centos_repo_gpgcheck }}"
     sslverify: "{{ centos_repo_ssl_verify }}"
+  when: centos_base_repo_enabled == True
 - yum_repository:
     name: updates
     description: "CentOS-$releaserver - Updates"
@@ -20,6 +21,7 @@
     gpgkey: "{{ centos_repo_gpgkey_url }}"
     gpgcheck: "{{ centos_repo_gpgcheck }}"
     sslverify: "{{ centos_repo_ssl_verify }}"
+  when: centos_updates_repo_enabled == True
 - yum_repository:
     name: extras
     description: "CentOS-$releaserver - Extras"
@@ -28,6 +30,7 @@
     gpgkey: "{{ centos_repo_gpgkey_url }}"
     gpgcheck: "{{ centos_repo_gpgcheck }}"
     sslverify: "{{ centos_repo_ssl_verify }}"     
+  when: centos_extras_repo_enabled == True
 - yum_repository:
     name: centosplus
     description: "CentOS-$releaserver - Plus"
@@ -36,6 +39,7 @@
     gpgkey: "{{ centos_repo_gpgkey_url }}"
     gpgcheck: "{{ centos_repo_gpgcheck }}"
     sslverify: "{{ centos_repo_ssl_verify }}"
+  when: centos_centosplus_repo_enabled == True
 - yum_repository:
     name: contrib
     description: "CentOS-$releaserver - Contrib"
@@ -44,6 +48,7 @@
     gpgkey: "{{ centos_repo_gpgkey_url }}"
     gpgcheck: "{{ centos_repo_gpgcheck }}"
     sslverify: "{{ centos_repo_ssl_verify }}"
+  when: centos_contrib_repo_enabled == True
 - yum_repository:
     name: fasttrack
     description: "CentOS-$releaserver - fasttrack"
@@ -52,6 +57,7 @@
     gpgkey: "{{ centos_repo_gpgkey_url }}"
     gpgcheck: "{{ centos_repo_gpgcheck }}"
     sslverify: "{{ centos_repo_ssl_verify }}"
+  when: centos_fasttrack_repo_enabled == True
 - yum_repository:
     name: epel
     description: "Extra Packages for Enterprise Linux 6 - $basearch"
@@ -60,3 +66,4 @@
     gpgkey: "{{ epel_repo_gpgkey_url }}"
     gpgcheck: "{{ epel_repo_gpgcheck }}"
     sslverify: "{{ epel_repo_ssl_verify }}"
+  when: epel_repo_enabled == True
