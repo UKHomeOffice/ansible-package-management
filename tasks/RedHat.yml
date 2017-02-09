@@ -60,7 +60,7 @@
   when: centos_fasttrack_repo_enabled == True
 - yum_repository:
     name: epel
-    description: "Extra Packages for Enterprise Linux 6 - $basearch"
+    description: "Extra Packages for Enterprise Linux - $basearch"
     baseurl: "{{ epel_repo }}"
     enabled: "{{ epel_repo_enabled }}"
     gpgkey: "{{ epel_repo_gpgkey_url }}"

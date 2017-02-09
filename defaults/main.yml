@@ -30,3 +30,14 @@ remove_repos:
   - CentOS-Sources.repo 
   - CentOS-Vault.repo
   - epel-testing.repo
+
+
+apt_archive_main_repo: "deb http://archive.ubuntu.com/ubuntu xenial main restricted"
+apt_archive_updates_repo: "deb http://archive.ubuntu.com/ubuntu xenial-updates main restricted"
+apt_archive_universe_repo: "deb http://archive.ubuntu.com/ubuntu xenial universe"
+apt_archive_universe_updates_repo: "deb http://archive.ubuntu.com/ubuntu xenial-updates universe"
+apt_archive_multiverse_repo: "deb http://archive.ubuntu.com/ubuntu xenial multiverse"
+apt_archive_multiverse_updates_repo: "deb http://archive.ubuntu.com/ubuntu xenial-backports main restricted universe multiverse"
+apt_security_main_repo: "deb http://security.ubuntu.com/ubuntu xenial-security main restricted"
+apt_security_universe_repo: "deb http://security.ubuntu.com/ubuntu xenial-security universe"
+apt_security_multiverse_repo: "deb http://security.ubuntu.com/ubuntu xenial-security multiverse"

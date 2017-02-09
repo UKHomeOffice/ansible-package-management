@@ -1,0 +1,65 @@
+---
+#- name : (Ubuntu) add docker apt key
+#  apt_key:
+#    url: "{{ apt_docker_key }}"
+#    id: "{{ apt_docker_key_id }}"
+#    state: present
+
+- name: remove sources.list
+  file:
+    path: /etc/apt/sources.list
+    state: absent
+
+- name: APT System Repo
+  apt_repository:
+    repo: "{{ apt_archive_main_repo }}"
+    update_cache: yes
+    mode: 0644
+
+- name: APT System Repo
+  apt_repository:
+    repo: "{{ apt_archive_updates_repo }}"
+    update_cache: yes
+    mode: 0644
+
+- name: APT System Repo
+  apt_repository:
+    repo: "{{ apt_archive_universe_repo }}"
+    update_cache: yes
+    mode: 0644
+
+- name: APT System Repo
+  apt_repository:
+    repo: "{{ apt_archive_universe_updates_repo }}"
+    update_cache: yes
+    mode: 0644
+
+- name: APT System Repo
+  apt_repository:
+    repo: "{{ apt_archive_multiverse_repo }}"
+    update_cache: yes
+    mode: 0644
+
+- name: APT System Repo
+  apt_repository:
+    repo: "{{ apt_archive_multiverse_updates_repo }}"
+    update_cache: yes
+    mode: 0644
+
+- name: APT System Repo
+  apt_repository:
+    repo: "{{ apt_security_main_repo }}"
+    update_cache: yes
+    mode: 0644
+
+- name: APT System Repo
+  apt_repository:
+    repo: "{{ apt_security_universe_repo }}"
+    update_cache: yes
+    mode: 0644
+
+- name: APT System Repo
+  apt_repository:
+    repo: "{{ apt_security_multiverse_repo }}"
+    update_cache: yes
+    mode: 0644
