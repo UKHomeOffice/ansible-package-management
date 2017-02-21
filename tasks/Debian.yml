@@ -11,55 +11,73 @@
     state: absent
 
 - name: APT System Repo
-  apt_repository:
-    repo: "{{ apt_archive_main_repo }}"
-    update_cache: yes
+  copy:
+    dest: /etc/apt/sources.list.d/apt_archive_main_repo.list
+    content: "{{ apt_archive_main_repo }}"
+    owner: root
+    group: root
     mode: 0644
 
 - name: APT System Repo
-  apt_repository:
-    repo: "{{ apt_archive_updates_repo }}"
-    update_cache: yes
+  copy:
+    dest: /etc/apt/sources.list.d/apt_archive_updates_repo.list
+    content: "{{ apt_archive_updates_repo }}"
+    owner: root
+    group: root
     mode: 0644
 
 - name: APT System Repo
-  apt_repository:
-    repo: "{{ apt_archive_universe_repo }}"
-    update_cache: yes
+  copy:
+    dest: /etc/apt/sources.list.d/apt_archive_universe_repo.list
+    content: "{{ apt_archive_universe_repo }}"
+    owner: root
+    group: root
     mode: 0644
 
 - name: APT System Repo
-  apt_repository:
-    repo: "{{ apt_archive_universe_updates_repo }}"
-    update_cache: yes
+  copy:
+    dest: /etc/apt/sources.list.d/apt_archive_universe_updates_repo.list
+    content: "{{ apt_archive_universe_updates_repo }}"
+    owner: root
+    group: root
     mode: 0644
 
 - name: APT System Repo
-  apt_repository:
-    repo: "{{ apt_archive_multiverse_repo }}"
-    update_cache: yes
+  copy:
+    dest: /etc/apt/sources.list.d/apt_archive_multiverse_repo.list
+    content: "{{ apt_archive_multiverse_repo }}"
+    owner: root
+    group: root
     mode: 0644
 
 - name: APT System Repo
-  apt_repository:
-    repo: "{{ apt_archive_multiverse_updates_repo }}"
-    update_cache: yes
+  copy:
+    dest: /etc/apt/sources.list.d/apt_archive_multiverse_updates_repo.list
+    content: "{{ apt_archive_multiverse_updates_repo }}"
+    owner: root
+    group: root
     mode: 0644
 
 - name: APT System Repo
-  apt_repository:
-    repo: "{{ apt_security_main_repo }}"
-    update_cache: yes
+  copy:
+    dest: /etc/apt/sources.list.d/apt_security_main_repo.list
+    content: "{{ apt_security_main_repo }}"
+    owner: root
+    group: root
     mode: 0644
 
 - name: APT System Repo
-  apt_repository:
-    repo: "{{ apt_security_universe_repo }}"
-    update_cache: yes
+  copy:
+    dest: /etc/apt/sources.list.d/apt_security_universe_repo.list
+    content: "{{ apt_security_universe_repo }}"
+    owner: root
+    group: root
     mode: 0644
 
 - name: APT System Repo
-  apt_repository:
-    repo: "{{ apt_security_multiverse_repo }}"
-    update_cache: yes
+  copy:
+    dest: /etc/apt/sources.list.d/apt_security_multiverse_repo.list
+    content: "{{ apt_security_multiverse_repo }}"
+    owner: root
+    group: root
     mode: 0644
