@@ -81,3 +81,10 @@
     owner: root
     group: root
     mode: 0644
+
+- name: Install Deb Package management
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - python-apt
